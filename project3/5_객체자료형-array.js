@@ -31,3 +31,40 @@ console.log(objArr.length);
 // 참조변수에는 주소값이 저장되어 있음
 // 실제 요소는 힙영역에 저장되어 있음
 // 따라서 주소를 변경하지 않고, 배열의 값만 변경 가능
+
+const customer = {"회원":["아이디","패스워드","등급","이름","전화번호"]};
+const product = {"제품":["제품명","가격","상세설명","카테고리"]};
+const order = {"주문":["제품명","수량","총주문금액","주문자","주문일자","배송지"]};
+
+console.log(customer);
+console.log(product);
+console.log(order);
+
+const person = {
+  age:30,
+  name:"둘리",
+  address:"서울"
+}
+
+person.age= 10;
+person.name = "또치";
+person.address = "인천";
+
+console.log(person);
+
+const product2 = {
+  name:"노트북",
+  price : 1500000,
+  brand : "삼성",
+}
+
+product2.price = 2000000;
+product2.brand = "LG";
+
+console.log(product2);
+
+const foodList = ['pizza', 'Hamburger','Chicken','Steak'];
+
+console.log(`${foodList[0]} ${foodList[foodList.length-1]}`);
+
+
