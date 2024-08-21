@@ -108,28 +108,3 @@ switch(rank){
 
 
 
-// 4-1
-x= 11;
-if(x > 10 && x < 20){
-  console.log(x);
-}
-
-//  4-2
-str = "banana";
-
-if (str.length > 5){
-  console.log(str);
-}
-
-// 4-3
-const person = {
-  age : 15,
-  gender : "M",
-  name : "둘리",
-  address : "서울",
-}
-
-if(person.age < 20 && person.gender == "M"){
-  console.log("남학생입니다.");
-};
-

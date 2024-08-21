@@ -68,3 +68,4 @@ const foodList = ['pizza', 'Hamburger','Chicken','Steak'];
 console.log(`${foodList[0]} ${foodList[foodList.length-1]}`);
 
 
+  

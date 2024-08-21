@@ -39,6 +39,14 @@ for(i=0;i<brands.length;i++){
   console.log(brands[i]);
 }
 
+console.log("of")
+let arr7 = [3,4,5];
+// for-of문
+for(let v of arr7){
+  // 배열을 순회하면서 값을 꺼냄
+  console.log(v);
+}
+
 // 800원으로 구매할 수 있는 음료수 찾기
 let inputCoin = 800;
 let outputList = [];
@@ -143,7 +151,7 @@ const arr1 = [1,'aa',true,5,10];
 sum7 = 0;
 
 for (i=0;i<arr1.length;i++){
-if (typeof arr1[i] == "number"){
+if (typeof arr[i] == "number"){
   sum7+=arr1[i];
 }
 }
@@ -162,8 +170,19 @@ console.log("\n");
 // 7-2 
 
 for(i=1;i<=5;i++){
+  let row = ""
   for(j=1;j<=i;j++){
-    process.stdout.write("*");
+    row += "*"
   }
-  console.log();
+  console.log(row);
+}
+
+// 7-3 
+
+for(i=1;i<=5;i++){
+  let row = ""
+  for(j=1;j<=2*i-1;j++){
+    row += "*"
+  }
+  console.log(row);
 }
