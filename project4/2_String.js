@@ -84,7 +84,3 @@ let string = "Hello";
 console.log(string[0]); // "H"
 console.log(string[1]); // "e"
 
-for (let str of string){
-  console.log(str);
-
-}
