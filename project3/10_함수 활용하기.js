@@ -136,6 +136,13 @@ console.log("======15번======")
 // 2*fac(1)
 // 1
 
+// 함수 완료 순서
+// factorial(1)
+// factorial(2)
+// factorial(3)
+// factorial(4)
+// factorial(5)
+
 
 // 끝나는 순서
 // 2*fac(1) = 2
