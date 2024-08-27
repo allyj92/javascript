@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let list = [
+        {
+          num: 1,
+          title: "hello",
+          info: ["banana", "apple"],
+          profile: { birth: "20201111", img: "http://www.test.com.1" },
+        },
+        {
+          num: 1,
+          title: "hello",
+          info: ["melon", "orange"],
+          profile: { birth: "20201212", img: "http://www.test.com/2" },
+        },
+      ];
+
+      let [, a] = list;
+      console.log(a);
+
+      let [, { num, title, info }] = list;
+      console.log(num, title, info);
+
+      let [
+        {
+          info: [, apple],
+        },
+      ] = list;
+      console.log(apple);
+
+      //   let [
+      //     ,
+      //     {
+      //       profile: { birth, img },
+      //     },
+      //   ] = list;
+      //   console.log(birth, img);
+
+      //   let [
+      //     ,
+      //     {
+      //       info: [, orange],
+      //     },
+      //   ] = list;
+      //   console.log(orange);
+
+      let [
+        {
+          profile: { birth, img },
+        },
+      ] = list;
+      console.log(birth, img);
+    </script>
+  </body>
+</html>
