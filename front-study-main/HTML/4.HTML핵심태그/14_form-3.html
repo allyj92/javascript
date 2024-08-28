@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>form</title>
+</head>
+
+<body>
+  <h2>회원가입 입력폼 만들기2</h2>
+
+  <form>
+    <fieldset>
+      <legend>사용자 정보</legend>
+      <ul>
+        <!-- 입력필드를 목록으로 나열하기 -->
+        <li>
+          <label for="id">아이디</label>
+          <!-- 아이디 필드에 자동으로 포커싱됨. 값을 입력하지 않고 가입하기 버튼을 누르면 경고창이 나타남 -->
+          <input type="text" name="id" autofocus placeholder="4자 ~ 10자 사이, 공백없이" required>
+        </li>
+        <li>
+          <label for="umail">이메일</label>
+          <input type="email" name="umail" required>
+        </li>
+        <li>
+          <label for="pwd1">비밀번호</label>
+          <input type="password" name="pwd1" placeholder="문자와 숫자, 특수 기호 포함" required>
+        </li>
+        <li>
+          <label for="pw2">비밀번호 확인</label>
+          <input type="password" name="pwd2" required>
+        </li>
+      </ul>
+    </fieldset>
+
+    <fieldset>
+      <legend>이벤트와 새로운 소식</legend>
+      <input type="radio" name="mailing" id="mailing_y">
+      <label for="mailing_y">메일 수신</label>
+      <input type="radio" name="mailing" id="mailing_n" checked> <!-- 수신안함이 선택된 상태로 나타남 -->
+      <label for="mailing_n">메일 수신 안 함</label>
+    </fieldset>
+
+    <input type="submit" value="가입하기">
+    <input type="reset" value="취소">
+  </form>
+</body>
+
+</html>

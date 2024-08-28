@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+
+    <style>
+        .parent {
+            width: 200px;
+            height: 150px;
+            background-color: royalblue;
+            margin: 20px;
+        }
+
+        /* 자식의 가로 너비를 부모보다 넓은 300px로 입력 */
+        .child {
+            width: 300px;
+            height: 100px;
+            background-color: orange;
+        }
+
+        /* 부모보다 넘치는 자식요소를 잘라냄 */
+        .p2 {
+            overflow: hidden;
+        }
+
+        /* 넘치는 부분을 잘라내고 스크롤바 생성*/
+        .p3 {
+            overflow: scroll;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 넘치는 부분을 그대로 출력 -->
+    <div class="parent p1">
+        <div class="child"></div>
+    </div>
+    <!-- 부모보다 넘치는 자식요소를 잘라냄 -->
+    <div class="parent p2">
+        <div class="child"></div>
+    </div>
+    <!-- 넘치는 부분이 잘려나갔지만 좌우 스크롤을 통해 전체내용을 볼 수 있음 -->
+    <div class="parent p3">
+        <div class="child"></div>
+    </div>
+
+</body>
+
+</html>

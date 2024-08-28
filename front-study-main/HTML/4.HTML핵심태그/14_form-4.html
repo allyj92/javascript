@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>form</title>
+  <style>
+    /* 필드셋 여백 주기 */
+    fieldset {
+      margin-bottom: 20px;
+    }
+
+    /* 필드셋 제목을 볼드체로 지정 */
+    fieldset legend {
+      font-weight: bold;
+    }
+
+    /* 목록에 순서 표시 없애기 */
+    ul {
+      list-style: none;
+    }
+
+    /* 목록내 항목에 여백 주기 */
+    li {
+      margin: 10px;
+    }
+
+    /* 배송정보의 라벨 정렬하기 */
+    .shipping {
+      width: 80px;
+      float: left;
+    }
+
+    /* 주문하기 버튼 색 변경하기 */
+    #btn1 {
+      background-color: rgb(25, 105, 255);
+      color: white;
+      margin-right: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>레드향 주문하기</h1>
+  <form>
+
+    <fieldset>
+      <legend>상품 선택</legend>
+      <p><b>주문할 상품을 선택해 주세요.</b></p>
+      <!-- 선물 목록 -->
+      <ul>
+        <li>
+          <label><input type="checkbox">선물용 3kg</label> <!-- 라벨을 선택하면 체크박스가 선택됨 -->
+          <input type="number" min="0" max="5">개 <small>(최대 5개)</small>
+        </li>
+        <li>
+          <label><input type="checkbox">선물용 5kg</label>
+          <input type="number" min="0" max="3">개 <small>(최대 3개)</small>
+        </li>
+      </ul>
+
+      <p><b>포장 선택</b></p>
+      <ul>
+        <li>
+          <input type="radio" id="g1" name="gift">
+          <label for="g1">선물 포장</label>
+        </li>
+        <li>
+          <input type="radio" id="g2" name="gift">
+          <label for="g2">선물 포장 안함</label>
+        </li>
+      </ul>
+    </fieldset>
+
+    <fieldset>
+      <legend>배송 정보</legend>
+      <ul>
+        <li>
+          <label for="username" class="shipping">이름</label>
+          <input type="text" id="username">
+        </li>
+        <li>
+          <label for="addr" class="shipping">배송 주소</label>
+          <input type="text" id="addr">
+        </li>
+        <li>
+          <label for="dday" class="shipping">배송 일자</label>
+          <input type="date" id="dday">
+        </li>
+        <li>
+          <label for="memo" class="shipping">메모</label>
+          <textarea cols="40" rows="4" id="memo"></textarea>
+        </li>
+      </ul>
+    </fieldset>
+
+    <button type="submit" id="btn1">주문하기</button>
+    <button type="reset">취소하기</button>
+
+  </form>
+</body>
+
+</html>
