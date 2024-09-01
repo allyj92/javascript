@@ -1,28 +1,33 @@
-#input-text.border-red{
-  outline: none;
-  border : 1px dashed red !important;
+.contact {
+  border: none;
 }
 
+.font-red {
+  color: red;
+}
+
+.border-red {
+  border: 2px solid red;
+}
 
 .form-container {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   width: 300px;
   margin-left: 30px;
 }
 
-.control{
+.control {
   display: flex;
   flex-direction: column;
   margin-left: 10px;
 }
 
-.button-container{
+.button-container {
   display: flex;
-
 }
 
-.textLengthWrap{
+.textLengthWrap {
   display: flex;
   justify-content: end;
 }
