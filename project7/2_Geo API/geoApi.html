@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+   
+    // 첫번재 매개변수: 성공적으로 가져왔을 때 호출되는 함수
+    // 두번재 매개변수: 위치를 가져오는 데 실패했을 때 호출되는 함수
+    const success = (position) => {
+      // 매개변수 : 브라우저에 접속한 사용자의 위치
+      console.log(position);
+      let latitude = position.coords.latitude;
+      let longitude =position.coords.longitude;
+
+      console.log(latitude);
+      console.log(longitude);
+
+    }
+    const error = (err) => {
+      console.log(err);
+    }
+
+    navigator.geolocation.getCurrentPosition(success, error);
+</script>
+
+</body>
+</html>
