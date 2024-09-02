@@ -1,0 +1,42 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  msg:
+  <div id ="msg"></div>
+
+  person:
+  <div>
+    <span id = "name"></span>
+    <span id = "age"></span>
+  </div>
+
+  <script>
+    const msg = document.getElementById("msg");
+    const name = document.getElementById("name");
+    const age = document.getElementById("age");
+
+    if (typeof Storage !== "undefined"){
+      // 스토리지에 저장된 데이터를 키로 꺼내기
+      let message = sessionStorage.getItem("message");
+      msg.textContent = message;
+
+
+      let person = sessionStorage.getItem("person");
+      let personObj = JSON.parse(person);
+      
+      name.textContent=personObj.name;
+      age.textContent =personObj.age;
+
+
+    }
+  </script>
+</body>
+</html>
