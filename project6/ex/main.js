@@ -3,9 +3,16 @@ let name = document.querySelector("#name");
 let contact = document.querySelector("#contact");
 let textArea = document.querySelector("#script");
 let submitBtn = document.querySelector("#submitBtn");
+
+// 2번
 let totalQuantityArea = document.querySelector("#totalCount");
 let totalPriceArea = document.querySelector("#totalPrice");
 let listContainer = document.querySelector("#listContainer");
+
+let productNameInput = document.querySelector("#productNameInput");
+let quantityInput = document.querySelector("#quantityInput");
+let priceInput = document.querySelector("#priceInput");
+let addCartBtn = document.querySelector("#addCart");
 
 // 3번
 let usernameInput = document.querySelector("#username");
@@ -31,45 +38,83 @@ const contactInputHandler = () => {
 contact.addEventListener("input", contactInputHandler);
 
 // 최대 글자 수(30글자)를 초과한 경우, 글자의 색이 빨간색으로 변경
-textArea.addEventListener("input", function () {
-  if (this.value.length > 30) {
-    textArea.classList.add("font-red");
-  } else {
-    textArea.classList.remove("font-red");
-  }
-});
+// textArea.addEventListener("input", function () {
+//   if (this.value.length > 30) {
+//     textArea.classList.add("font-red");
+//   } else {
+//     textArea.classList.remove("font-red");
+//   }
+// });
 
 // 폼 제출 시 이름, 연락처, 지원분야 필드가 비어있는지 확인하고, 비어있으면 경고메세지를 표시합니다.
-submitBtn.addEventListener("click", function (e) {
-  if (name.value.length == 0) {
-    alert("이름을 입력해 주세요.");
-  } else if (contact.value.length == 0) {
-    alert("연락처를 입력해 주세요.");
-  }
-  e.preventDefault();
-});
+// submitBtn.addEventListener("click", function (e) {
+//   if (name.value.length == 0) {
+//     alert("이름을 입력해 주세요.");
+//   } else if (contact.value.length == 0) {
+//     alert("연락처를 입력해 주세요.");
+//   }
+//   e.preventDefault();
+// });
 
+// 2번
 // 장바구니 총 수량 및 총 가격 계산 함수
+let productNameValue = '';
+let quantityValue = 0;
+let priceValue = 0;
+
+productNameInput.addEventListener("change",(e)=>{
+ productNameValue = e.target.value;
+
+})
+
+quantityInput.addEventListener("change",(e)=>{
+  quantityValue = parseInt(e.target.value);
+})
+
+priceInput.addEventListener("change",(e)=>{
+  priceValue = parseInt(e.target.value);
+})
+
+addCartBtn.addEventListener("click",(e)=>{
+  e.preventDefault();
+  let newLi = document.createElement('li');
+  let newBtn = document.createElement("button");
+  newBtn.textContent = "제거";
+  newBtn.classList.add('button', 'is-light', 'deleteBtn');;
+  newLi.textContent=`${productNameValue} - ${quantityValue}개 ${priceValue}원`;
+  newLi.appendChild(newBtn)
+  listContainer.appendChild(newLi);
+  calculateTotals(); 
+
+  
+  
+}) 
+
+
 const calculateTotals = () => {
   let totalQuantity = 0;
   let totalPrice = 0;
   let fruits = document.querySelectorAll("#listContainer li");
 
   for (let fruit of fruits) {
+    let quantity = 0;
+    let price = 0;
+
     let text = fruit.innerText;
 
     let quantityMatch = text.match(/-(\d+)개/);
     let priceMatch = text.match(/(\d+)원/);
 
     if (quantityMatch) {
-      let quantity = parseInt(quantityMatch[1]);
+      quantity = parseInt(quantityMatch[1]);
       totalQuantity += quantity;
     }
 
     if (priceMatch) {
-      let price = parseInt(priceMatch[1]);
-      totalPrice += price;
+      price = parseInt(priceMatch[1]);
+      totalPrice += quantity * price; 
     }
+    
   }
 
   totalQuantityArea.textContent = `총 수량: ${totalQuantity}개`;
@@ -89,6 +134,11 @@ listContainer.addEventListener("click", (e) => {
     }
   }
 });
+
+
+
+
+
 
 // 정규식: 소문자와 숫자의 조합, 길이 4-8자
 const idPattern = /^[a-z0-9]{4,8}$/;

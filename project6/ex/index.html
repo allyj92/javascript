@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
   <link rel="stylesheet" href="app.css">
+  
 </head>
 <body>
 
-<h1>style</h1>
-<section>
+    <h1>style</h1>
+  </section>
   <form action="text" id="form-text">
     <label for="input-text" id="label-text">Text</label>
     <input type="text" id="input-text" name="text">
-  </form>
-</section>
+</form>
+
 
 <h1>1번</h1>
 <hr>
@@ -25,10 +25,10 @@
 <hr>
 <h4>개인정보</h4>
 
-<form action="info" id="info" class="form-container">
+<form action="info" id = "info" class="form-container">
   <label for="name">이름</label>
-  <input id="name" type="text">
-  <label for="contact">연락처</label>
+  <input type="text" id="name">
+  <label for="contact" class="contact">연락처</label>
   <input type="text" id="contact">
   <h4>지원 분야</h4>
   <div class="control">
@@ -38,7 +38,7 @@
     </label>
     <label class="radio">
       <input type="radio" name="answer" />
-      웹 애플리케이션 개발
+      웹 에플리케이션 개발
     </label>
     <label class="radio">
       <input type="radio" name="answer" />
@@ -47,23 +47,34 @@
   </div>
   
   <h4>지원동기</h4>
-  <textarea name="script" id="script" cols="80" rows="10"></textarea>
+  <textarea name="" id="" cols="80" rows="10"></textarea>
   <div class="textLengthWrap">
     <p class="textCount">0자</p>
     <p class="textTotal">/200자</p>
   </div>
   <div class="button-container">
-    <button id="submitBtn" type="submit">접수하기</button>
+    <button type="submit">접수하기</button>
     <button type="reset">다시 쓰기</button>
   </div>
+  
+
 </form>
 <hr>
 <h1>2번</h1>
 
 <div class="container">
-  <h1>장바구니</h1>
+  <h1>온라인 쇼핑 장바구니</h1>
   <hr>
   <div class="container">
+    <form action="cart">
+      <label for="productNameInput">상품 이름: </label>
+      <input type="text" name ="productNameInput" id = "productNameInput">
+      <label for="quantityInput">수량: </label>
+      <input type="text" name = "quantityInput" id = "quantityInput">
+      <label for="priceInput">가격(개당): </label>
+      <input type="text" name ="priceInput" id = "priceInput">
+      <button type="button" id="addCart">장바구니에 추가</button>
+    </form>
     <ul id="listContainer">
       <li>바나나-3개 3000원 <button class="button is-light deleteBtn">제거</button></li>
       <li>사과-1개 5000원 <button class="button is-light deleteBtn">제거</button></li>
