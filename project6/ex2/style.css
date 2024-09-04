@@ -1,19 +1,121 @@
-.strikeout{
-  text-decoration: line-through;
+body {
+  background-color: #2c2c2c; /* 어두운 배경색으로 변경 */
+  height: 100vh; /* 전체 화면 높이로 설정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: 'Arial', sans-serif; /* 폰트 설정 */
 }
 
-.container{
-  width: 50%;
+p {
+  color: #9c9c9c; /* 더 세련된 회색으로 변경 */
+  margin: 10px 0;
+}
+
+p #totalList, p #completedTotalList {
+  font-weight: 800;
+}
+
+p #totalList {
+  color: #FFBB3C; /* 기존 색상 유지 */
+}
+
+p #completedTotalList {
+  color: #9DD346; /* 기존 색상 유지 */
+}
+
+.strikeout {
+  text-decoration: line-through;
+  color: #FF6B6B; /* 취소선 텍스트 색상을 붉은 톤으로 변경 */
+}
+
+.container {
+  width: 340px;
+  min-height: 600px;
   margin: 0 auto;
   text-align: center;
-  background-color: rgb(252, 252, 252);
+  background-color: #FFFFFF;
+  border-radius: 10px; /* 모서리를 조금 더 둥글게 */
+  padding: 40px 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 추가 */
 }
 
-.checkbox_container{
+.checkbox_container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top:20px;
-  
+  justify-content: flex-start; /* 텍스트가 상단 정렬되도록 수정 */
+  gap: 0.7rem;
+  margin-top: 20px;
+  max-height: 400px; /* 높이 제한 */
+  overflow-y: auto; /* 스크롤 추가 */
+  padding-right: 10px; /* 스크롤바 여유 공간 추가 */
+}
+
+#fix_width {
+  width: 45%; /* 폭을 조정하여 균형 있게 변경 */
+  border: 1px solid #ccc; /* 테두리 추가 */
+  border-radius: 4px; /* 입력 박스 테두리 둥글게 */
+  padding: 5px;
+  margin-right: 10px; /* 적절한 간격 추가 */
+}
+
+#input {
+  width: 60%; /* 입력 필드 너비 조정 */
+  border: 1px solid #ccc; /* 테두리 추가 */
+  border-radius: 4px; /* 입력 박스 테두리 둥글게 */
+  padding: 5px;
+}
+
+input[type="text"]:focus {
+  border-color: #FFBB3C; /* 포커스 시 테두리 색상 변경 */
+  outline: none; /* 기본 포커스 제거 */
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #f0f0f0;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.button.is-small {
+  font-size: 0.85rem; /* 작은 버튼 폰트 크기 */
+}
+
+.button.is-success.is-light {
+  background-color: #9DD346; /* 성공 버튼 색상 */
+  color: #fff;
+}
+
+.button.is-success.is-light:hover {
+  background-color: #86bc3c; /* 성공 버튼 호버 색상 */
+}
+
+#addBtn {
+  background-color: #FFBB3C; /* 추가 버튼 색상 */
+  color: #fff;
+}
+
+#addBtn:hover {
+  background-color: #e6a531; /* 추가 버튼 호버 색상 */
+}
+
+#deleteAllBtn {
+  background-color: #FF6B6B; /* 전체 삭제 버튼 색상 */
+  color: #fff;
+}
+
+#deleteAllBtn:hover {
+  background-color: #e65e5e; /* 전체 삭제 버튼 호버 색상 */
 }
